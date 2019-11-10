@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Car Insurance Form</title>
+    <meta charset='utf-8'>
+    <script type="text/javascript">
+
+    
+    //Got help from https://www.w3schools.com/howto/howto_js_countdown.asp
+        var x = setInterval(function () {
+
+            var time = document.getElementById("time").innerHTML;
+
+            var timeArray = time.split(":");
+            var minutes = timeArray[0];
+            var seconds = timeArray[1];
+
+
+            var s = checkSecond((seconds - 1));
+            if (s == 59) {
+                minutes -= 1
+            }
+
+
+            document.getElementById("time").innerHTML = minutes + ":" + s;
+
+
+        }, 1000)
+
+         //Got help from https://codepen.io/ishanbakshi/pen/pgzNMv
+        function checkSecond(sec) {
+            if (sec < 10 && sec >= 0) {
+                sec = "0" + sec
+            }
+            ;
+            if (sec < 0) {
+                sec = 59
+
+            }
+            ;
+            return sec;
+        }
+
+
+        function checkForNumber(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("age").value ="";
+                document.getElementById("age").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+        function checkForNumber2(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("st").value ="";
+                document.getElementById("st").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+        function checkForNumber3(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("md").value ="";
+                document.getElementById("md").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+        function checkForNumber4(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("en").value ="";
+                document.getElementById("en").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber5(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("carAge").value ="";
+                document.getElementById("carAge").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber6(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("mileage").value ="";
+                document.getElementById("mileage").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber7(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("carValues").value ="";
+                document.getElementById("carValues").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber8(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("dd").value ="";
+                document.getElementById("dd").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber9(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("mm").value ="";
+                document.getElementById("mm").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+        function checkForNumber10(fieldValue) {
+            var numberCheck = isNaN(fieldValue);
+            if (numberCheck == true) {
+                window.alert("You must enter a numeric value!");
+                document.getElementById("yy").value ="";
+                document.getElementById("yy").focus();
+                return false;
+            }
+            else
+                return true;
+        }
+
+     
+
+
+
+
+        function autoPopulate() {
+            if (document.forms[0].make.options[1].selected) {
+
+                var audi1 = new Option("R8", "R8", false, false);
+                var audi2 = new Option("A4", "A4", false, false);
+
+                 document.getElementById("fType").options.selectedIndex = 0;
+                document.forms[0].model.options[1] = audi1;
+                document.forms[0].model.options[2] = audi2;
+                    
+            }
+
+            else if (document.forms[0].make.options[2].selected) {
+
+                var bmw1 = new Option("X6", "X6", false, false);
+                var bmw2 = new Option("i8", "i8", false, false);
+                
+                document.getElementById("fType").options.selectedIndex = 0;
+                document.forms[0].model.options[1] = bmw1;
+                document.forms[0].model.options[2] = bmw2;
+            }
+
+            else if (document.forms[0].make.options[3].selected) {
+
+                var volvo1 = new Option("s90", "s90", false, false);
+                var volvo2 = new Option("v40", "v40", false, false);
+                
+                document.getElementById("fType").options.selectedIndex = 0;
+                document.forms[0].model.options[1] = volvo1;
+                document.forms[0].model.options[2] = volvo2;
+            }
+
+            else if (document.forms[0].make.options[4].selected) {
+
+                var nissan1 = new Option("qashqai", "qashqai", false, false);
+                var nissan2 = new Option("x-trail", "x-trail", false, false);
+
+                document.getElementById("fType").options.selectedIndex = 0;
+                document.forms[0].model.options[1] = nissan1;
+                document.forms[0].model.options[2] = nissan2;
+            }
+
+            else {
+
+                var mazda1 = new Option("cx 5", "cx 5", false, false);
+                var mazda2 = new Option("rx7", "rx7", false, false);
+                
+                document.getElementById("fType").options.selectedIndex = 0;
+                document.forms[0].model.options[1] = mazda1;
+                document.forms[0].model.options[2] = mazda2;
+            }
+
+
+
+
+        }
+        
+        function resetFuelType(){
+        
+        var len = document.forms[0].model.length;
+
+            for (var i = 0; i < len; i++) {
+
+
+                if (document.forms[0].model[i].selected) {
+        
+                  document.getElementById("fType").options.selectedIndex = 0;
+       
+        }
+        }
+        }
+
+        var total = 0;
+        var gender = 0;
+        var age = 0;
+        var age2 =0;
+
+        function calcAge() {
+
+
+            age = document.forms[0].age.value;
+
+
+            if (age < 25) {
+
+                age2 = 500;
+
+            }
+            if (age >= 25 && age <= 30) {
+
+                age2 = 350;
+
+            }
+
+            else if (age > 30 && age < 65) {
+
+                age2 = 200;
+            }
+
+            else if (age >= 65) {
+
+                age2 = 500;
+            }
+            else if(age < 16){
+                alert("Please enter a valid age");
+                document.getElementById("age").value="";
+                document.getElementById("age").focus();
+                age2=0;
+            }
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+
+        }
+
+        var carV=0;
+
+        function carAges() {
+
+            carAge = document.forms[0].carAge.value;
+
+
+            if (carAge < 3) {
+
+                carV = 100;
+
+            }
+
+            else if (carAge >= 3 && carAge < 6) {
+
+                carV = 70;
+            }
+
+            else if (carAge >= 6 && carAge < 10) {
+
+                carV = 50;
+
+            }
+
+            else {
+
+                carV = 20;
+
+            }
+             if(carAge < 1){
+                alert("Please enter a valid car age");
+                document.getElementById("carAge").value="";
+                document.getElementById("carAge").focus();
+                carV = 0;
+            }
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+//alert(total);
+
+        }
+
+
+        var genderValue=0;
+
+        function getGender() {
+
+
+            var len = document.forms[0].gender.length;
+
+            for (var i = 0; i < len; i++) {
+
+
+                if (document.forms[0].gender[i].checked) {
+
+                    gender = parseInt(document.forms[0].gender.value);
+
+
+                    break;
+
+                }
+
+
+            }
+
+            genderValue = gender;
+
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+        }
+
+
+        var securityValue=0;
+
+        function calcSecurity() {
+
+            var len = document.forms[0].security.length;
+
+            for (var i = 0; i < len; i++) {
+
+                if (document.forms[0].security[i].checked) {
+
+                    security = parseInt(document.forms[0].security.value);
+                    break;
+                }
+
+
+            }
+
+            securityValue = security;
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+        }
+
+        var useOfCar=0;
+
+        function calcUse() {
+
+            var len = document.forms[0].use.length;
+
+            for (var i = 0; i < len; i++) {
+
+                if (document.forms[0].use[i].checked) {
+
+                    use = parseInt(document.forms[0].use.value);
+                    break;
+                }
+
+
+            }
+
+            useOfCar = use;
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+
+        }
+
+        var fuelT=0;
+
+        function calcFuelType() {
+
+
+            var len = document.forms[0].fType.length;
+
+            for (var i = 0; i < len; ++i) {
+
+                if (document.forms[0].fType.options[i].selected) {
+
+                    fType = parseInt(document.forms[0].fType.options[i].value);
+                    break;
+
+                }
+
+            }
+
+            fuelT = fType;
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+        }
+
+        var claim=0;
+
+        function calcClaims() {
+
+            var len = document.forms[0].claims.length;
+
+            for (var i = 0; i < len; i++) {
+
+                if (document.forms[0].claims.options[i].selected) {
+
+                    claims = parseInt(document.forms[0].claims.options[i].value);
+                    break;
+
+
+                }
+
+            }
+
+            claim = claims;
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+        }
+
+
+        var mileages=0;
+
+        function calcMileage() {
+
+            mileage = parseFloat(document.forms[0].mileage.value);
+
+            if (mileage < 15000) {
+
+                mileages = 30;
+
+            }
+
+            else if (mileage > 15000 && mileage < 25000) {
+
+                mileages = 40;
+
+            }
+
+            else {
+
+                mileages = 50;
+
+            }
+            if(mileage < 1){
+                alert("Please enter a valid number");
+                document.getElementById("mileage").value ="";
+                document.getElementById("mileage").focus();
+                mileages=0;
+            }
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+        }
+
+        var valueOfCar=0;
+
+        function carValue() {
+
+            var value = parseFloat(document.forms[0].Carvalue.value);
+
+            valueOfCar = value * 0.20;
+            if(value < 1){
+                alert("Please enter a valid number");
+                document.getElementById("carValues").value="";
+                document.getElementById("carValues").focus();
+                valueOfCar=0;
+            }
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+
+//alert(total);
+
+        }
+
+        var coverValue=0;
+
+        function calcCover() {
+
+            var len = document.forms[0].cover.length;
+
+            for (var i = 0; i < len; i++) {
+
+                if (document.forms[0].cover.options[i].selected) {
+
+                    cover = parseInt(document.forms[0].cover.options[i].value);
+                    break;
+
+
+                }
+
+            }
+
+            coverValue = cover
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+            //alert(total);
+
+
+        }
+
+
+        function getQuote() {
+
+            var fName = document.getElementById("Fname").value;
+            var sName = document.getElementById("Sname").value;
+            var age = document.getElementById("age").value;
+            var carAge = document.getElementById("carAge").value;
+            var mileage = document.getElementById("mileage").value;
+            var carValues = document.getElementById("carValues").value;
+
+
+
+
+
+            if (fName == "" ||  !isNaN(fName)) {
+
+                alert("Please enter a valid first name");
+                document.getElementById("Fname").value="";
+                document.getElementById("Fname").focus();
+                return false;
+
+
+            }
+
+
+            if (sName == "" || !isNaN(sName)) {
+
+                alert("Please enter a valid surname");
+                document.getElementById("Sname").value="";
+                document.getElementById("Sname").focus();
+                return false;
+
+            }
+
+            if (age == "") {
+
+                alert("Please enter your age");
+                document.getElementById("age").focus();
+
+
+                return false;
+
+            }
+
+
+
+            if (document.getElementById("male").checked == false && document.getElementById("female").checked == false) {
+
+
+                alert("Please specify your gender");
+
+                document.getElementById("male").focus();
+                return false;
+
+
+            }
+
+            var start = document.getElementById("st").value;
+            var middle = document.getElementById("md").value;
+            var end = document.getElementById("en").value;
+
+            if (start.length != 3) {
+                alert("Please enter a valid phone number!");
+                document.getElementById("st").focus();
+                return false;
+            }
+
+            if (middle.length != 3) {
+                alert("Please enter a valid phone number!");
+                document.getElementById("md").focus();
+                return false;
+            }
+            if (end.length != 4) {
+                alert("Please enter a valid phone number!");
+                document.getElementById("en").focus();
+                return false;
+            }
+
+
+            if (document.getElementById("make").selectedIndex == "0") {
+
+                alert("Please select make");
+                document.getElementById("make").focus();
+                return false;
+
+
+            }
+
+            if (document.getElementById("model").options.selectedIndex == "0") {
+
+                alert("Please select model");
+                document.getElementById("model").focus();
+                return false;
+
+            }
+
+            if (document.getElementById("fType").options.selectedIndex == "0") {
+
+                alert("Please select fuel type");
+                document.getElementById("fType").focus();
+                return false;
+
+
+            }
+
+            if (carAge == "") {
+
+                alert("Please enter the age of your car");
+                document.getElementById("carAge").focus();
+                return false;
+
+
+            }
+
+            if (document.getElementById("claims").options.selectedIndex == "0") {
+
+                alert("Please select your claims");
+                document.getElementById("claims").focus();
+                return false;
+
+
+            }
+
+            if (mileage == "") {
+                alert("Please enter mileage");
+
+                document.getElementById("mileage").focus();
+                return false;
+
+
+            }
+
+            if (carValues == "") {
+
+                alert("Please enter the value of your car");
+                document.getElementById("carValues").focus();
+                return false;
+
+
+            }
+
+
+            if (document.forms[0].security[0].checked == false && document.forms[0].security[1].checked == false && document.forms[0].security[2].checked == false && document.forms[0].security[3].checked == false && document.forms[0].security[4].checked == false) {
+
+                alert("Please selecet your security type");
+                document.forms[0].security[0].focus();
+
+
+                return false;
+
+
+            }
+
+
+            if (document.getElementById("dom").checked == false && document.getElementById("classUse").checked == false) {
+
+                alert("Please specify the use of the car");
+                document.getElementById("dom").focus();
+                return false;
+
+
+            }
+
+      var today = new Date();
+      var date = document.getElementById("date").value;
+      
+      var year = today.getFullYear();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+        if (dd < 10){
+        
+          dd = '0' + dd;
+        }if(mm < 10){
+        
+        mm = '0' + mm;
+        
+        }
+        today = year + '-' + mm + '-' + dd;
+    
+       if(date < today )   {
+
+         alert("Please enter a date in the future");
+           document.getElementById("date").focus();
+           return false;
+       
+       }
+     
+      
+    
+
+     
+
+            if (document.getElementById("cover").options.selectedIndex == "0") {
+
+                alert("Please select your cover");
+                document.getElementById("cover").focus();
+                return false;
+
+
+            }
+            
+            return true;
+
+
+        }
+
+        function getTotal() {
+            //alert(document.getElementById("totalCost").value=total);
+
+            document.getElementById("totalCost").value = total + age2 + genderValue + fuelT + carV + claim + mileages + valueOfCar + securityValue + useOfCar + coverValue;
+
+        }
+
+        var buttonNotPressed = setTimeout(
+            "window.location = 'timeout.html'",
+            240000);
+
+
+    </script>
+
+
+    <style>
+
+
+        input[type=text]:focus {
+
+            border-color: green;
+
+        }
+        
+      img{
+          vertical-align: middle;
+      }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            font-family: Georgia, serif;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+        }
+
+        input[type=text], select {
+
+
+            padding: 5px;
+            border: 1px solid #ccc;
+            
+
+        }
+        
+         input[type=date] {
+
+
+            padding: 2px;
+            border: 1px solid #ccc;
+            
+
+        }
+
+        #sec {
+
+            margin-left: 9.8%;
+
+        }
+
+        #classUse {
+
+            margin-left: 26.1%;
+
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 45%;
+            margin-top: 2%;
+        }
+        
+         input[type=reset] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 2%;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<div>
+
+    <h1 style="text-align:center; font-family:  Lucida Sans Unicode, Lucida Grande, sans-serif">Car Insurance
+    Quotation
+    Form</h1>
+    <p style="text-align:center;font-family:  Lucida Sans Unicode, Lucida Grande, sans-serif">Please fill out the form accurately for better assistance</p>
+
+    <h2 style="margin-left:24%;margin-top:3%;"><img src="you.png" style="width:3%;height:3%;" >Your Details
+    </h2>
+
+
+    <div class="container">
+        <form name="personalDetails" encType="application/x-www-form-urlencoded" method="get" action="Summary.html"
+              onsubmit=" return getQuote()">
+
+            <div style="text-align:center;">
+                Name: <input type="text" id="Fname" name="First Name"  placeholder="First Name.."
+                             style="text-transform: uppercase" > <input type="text"
+                                                                       id="Sname"
+                                                                       name="Last Name"
+                                                                       placeholder="Last Name.."
+                                                                       style="text-transform: uppercase">
+                <br><br>
+            </div>
+            <div style="padding-left:28.5%;">
+                Age:<input type="text" id="age" name="Age" placeholder="Enter your age.." style="margin-left:1.3%"
+                           onchange="calcAge()" onblur="return checkForNumber(this.value);"> <br><br>
+            </div>
+            <div style="padding-left:26%;">
+                Gender:<input type="radio" id="male" name="gender" value="400" onclick="getGender()"> Male
+                <input type="radio" id="female" name="gender" value="250" onclick="getGender()"> Female <br><br>
+            </div>
+            <div style="padding-left:24%">
+                Telephone: <input type="text" maxlength="3" size="3" id="st" name="Telephone" placeholder="087"
+                                  onblur="return checkForNumber2(this.value);"> <input type="text" maxlength="3" size="3"
+                                                                                      id="md" name="Telephone" placeholder="123"
+                                                                                      onblur="return checkForNumber3(this.value);">
+                <input type="text" maxlength="4" size="4" id="en" name="Telephone" placeholder="4567"
+                       onblur="return checkForNumber4(this.value);">
+                
+
+
+                <!-- </form>  -->
+            </div>
+
+
+    </div>
+
+    <h2 style="margin-left:24%;margin-top:3%;"><img src="car.png" style="width:3%;height:3%;" >About the car
+    </h2>
+
+    <div class="container">
+        <!-- <form name="carDetails">  -->
+        <div style="padding-left:24%;">
+            Make: <select id="make" name="make" style="width:29%; text-transform: uppercase" onchange="autoPopulate()">
+            <option disabled selected value> -- Select car make --</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="volvo">Volvo</option>
+            <option value="nissan">Nissan</option>
+            <option value="mazda">Mazda</option>
+        </select> <br><br>
+
+        </div>
+        <div style="padding-left:23.4%;">
+            Model: <select id="model" name="model" style="width:29%; text-transform: uppercase" onchange="resetFuelType()">
+            <option disabled selected value> -- Select car model --</option>
+
+        </select> <br><br>
+        </div>
+        <div style="padding-left:20.5%;">
+            Fuel Type: <select id="fType" name="Fuel Type" style="width:28%; text-transform: uppercase"
+                               onchange="calcFuelType()">
+            <option disabled selected value> -- Select fuel type --</option>
+            <option value="50">Diesel</option>
+            <option value="40">Petrol</option>
+            <option value="20">Hybrid</option>
+        </select> <br><br>
+        </div>
+        <div style="padding-left:22.2%">
+            Car Age: <input type="text" id="carAge" name="Car Age" placeholder="Enter car age.." onchange="carAges()"
+                            onblur="return checkForNumber5(this.value);"> <br><br>
+        </div>
+
+        <div style="padding-left:14.8%">
+
+            Claims Free For: <span style="color: red;"> *</span> <select id="claims" name="claims"
+                                                                         style="width:26%; text-transform: uppercase"
+                                                                         onchange="calcClaims()">
+            <option disabled selected value> -- Please select year --</option>
+            <option value="100">1 Year</option>
+            <option value="80">2 Years</option>
+            <option value="60">3 Years</option>
+            <option value="40">4 Years</option>
+            <option value="20">>= 5 Years</option>
+        </select>
+            <div class="tooltip"><span style="color: blue">? </span> <span class="tooltiptext">Number of years you haven't made a claim</span>
+            </div>
+            <br><br>
+        </div>
+        <div style="padding-left:15.5%">
+            Mileage per year: <input type="text" id="mileage" name="mileage" placeholder="e.g 15000"
+                                     onchange="calcMileage()" onblur="return checkForNumber6(this.value);"> <br><br>
+        </div>
+
+        <div style="padding-left:20.5%">
+
+            Car Value: <input type="text" id="carValues" name="Carvalue" placeholder="e.g 20000" onchange="carValue()"
+                              onblur="return checkForNumber7(this.value);"> <br><br>
+        </div>
+
+        <div style="padding-left:21.5%">
+            Security: <input type="radio" name="security" value="100" onclick="calcSecurity()"> None <br>
+            <input type="radio" id="sec" name="security" value="70" onclick="calcSecurity()"> Alarm <br>
+            <input type="radio" id="sec" name="security" value="50" onclick="calcSecurity()"> Immobiliser <br>
+            <input type="radio" id="sec" name="security" value="30" onclick="calcSecurity()"> Alarm & Immobiliser <br>
+            <input type="radio" id="sec" name="security" value="10" onclick="calcSecurity()"> Tracking device alarm &
+            Immobiliser <br><br>
+        </div>
+
+        <div style="padding-left: 5%">
+            What is the car being used for: <span style="color: red;"> *</span> <input type="radio" id="dom" name="use"
+                                                                                       value="30" onclick="calcUse()">
+            Social Domestic and Pleasure <br>
+            <input type="radio" id="classUse" name="use" value="50" onclick="calcUse()"> Class 1 Use
+            <div class="tooltip" style="margin-left: 20%;"><span style="color: blue; ">? </span> <span
+                    class="tooltiptext">Specify the use of the car</span>
+            </div>
+
+        </div>
+
+        <!--  </form> -->
+    </div>
+
+    <h2 style="margin-left:23%;margin-top:3%;"><img src="cal.png" style="width:5%;height:5%;" >Your Cover
+    </h2>
+
+    <div class="container">
+
+        <!-- <form name="policyDetails">   -->
+
+        <div style="padding-left:10.5%;">
+            Policy Start Date:
+            
+                                                                        <input name="Date"type="date"id="date" style="margin-left:1.2%; width:22.4%;">
+
+            <div class="tooltip"><span style="color: blue">? </span> <span class="tooltiptext">The date in which the policy is effective</span>
+            </div>
+
+            <br><br>
+        </div>
+        <div style="padding-left:12.7%;">
+            Type of Cover:<span style="color: red;"> *</span> <select style="width: 23.4%; text-transform: uppercase"
+                                                                      id="cover" name="cover" onchange="calcCover()">
+            <option disabled selected value> -- Select cover type --</option>
+            <option value="400">Fully Comprehensive</option>
+            <option value="200">Third Party Fire and Theft</option>
+        </select>
+
+            <div class="tooltip"><span style="color: blue">? </span> <span class="tooltiptext">Specify your cover</span>
+            </div>
+
+        </div>
+        <!--   </form>        -->
+
+
+    </div>
+
+    <p style="position: fixed; margin-top: -41%; font-weight: bold; margin-left: 5%">TOTAL:</p>
+
+    <input style=" background: gainsboro; position: fixed; margin-top: -40%;width:4%; margin-left: 5%;" type="text"
+           name="totalCost" id="totalCost" value="0" readonly>
+
+    <input type="submit" value="Get Quote" onclick="getTotal()">&nbsp;
+    <input type="reset" value="Reset">
+
+    <p id="time" style="margin-left: 93%;font-weight: bold; position: fixed; margin-top: -70%;font-size: 300%;">
+        04:00</p>
+
+
+    </form>
+    </body>
+</html>

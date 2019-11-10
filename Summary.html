@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Summary</title>
+    <meta charset='utf-8'>
+
+      <h1 style="text-align: center; font-family:  Lucida Sans Unicode, Lucida Grande, sans-serif">Your form has been submitted!</h1>
+
+      <h2 style="text-align: center; font-family:  Lucida Sans Unicode, Lucida Grande, sans-serif">You entered the following data:</h2>
+       <script type="text/javascript">
+
+
+
+function prints(){
+    window.print();
+}
+
+                   //Return the querystring part of a URL. 
+
+
+                            var formData = location.search;
+
+//This method extracts the characters in a string between "start" and "end", not including "end" itself.
+
+
+                            formData = formData.substring(1, formData.length);
+
+//The indexOf() method returns the position of the first occurrence of a specified value in a string.
+//This method returns -1 if the value to search for never occurs. 
+
+
+                            while (formData.indexOf("+") != -1) {
+
+
+
+	                            formData = formData.replace("+", " ");
+
+
+
+                            }
+
+//The decodeURI() function is used to decode a URI. Remove %20 etc 
+formData = decodeURI(formData);
+
+
+                            var formArray = formData.split("&");
+
+//Split a string into an array of substrings:
+
+
+                            document.write("<p>");
+
+
+                   document.write("<h1 style=\"margin-left:24%;margin-top:3%;\"><img src=\"you.png\" style=\"width:3%;height:3%;\" align=\"left\">Your Details</h1>")
+                            for (var i=0; i < 7; ++i) {
+
+
+                               document.write("<div style='background: #f2f2f2;  font-family: Georgia, serif;  width:50%; margin: 0 auto; padding:10px; text-align: center; text-transform: uppercase'>")
+	                            document.writeln(formArray[i].replace("=", ": ") + "<br />");
+                               document.write("</div>");
+
+
+
+                            }
+
+
+
+
+
+
+
+                            document.write("</p>");
+
+
+                        document.write("<p>")
+                   document.write("<h1 style=\"margin-left:24%;margin-top:3%;\"><img src=\"car.png\" style=\"width:3%;height:3%;\" align=\"left\">Car Details</h1>")
+                   for (var i=7; i < 16; ++i) {
+
+
+                       document.write("<div  style='background: #f2f2f2;  font-family: Georgia, serif; width:50%; margin: 0 auto; padding:10px; text-transform: uppercase; text-align: center '>")
+                       document.writeln(formArray[i].replace("=", ": ") + "<br />");
+                       document.write("</div>");
+
+
+
+                   }
+
+                   document.write("</p>");
+
+                   document.write("<h1 style=\"margin-left:24%;margin-top:3%;\"><img src=\"cal.png\" style=\"width:5%;height:5%;\" align=\"left\">Policy Details</h1>")
+
+                   for (var i=16; i < 21; ++i) {
+
+
+                       document.write("<div  style='background: #f2f2f2;  font-family: Georgia, serif; width:50%; margin: 0 auto; padding:10px; text-transform: uppercase; text-align: center '>")
+                       document.writeln(formArray[i].replace("=", ": ") + "<br />");
+                       document.write("</div>");
+
+
+
+                   }
+
+
+
+
+
+                        </script>
+
+
+  </head>
+  <body>
+
+
+<input style="background-color: #4CAF50; color: white; padding: 12px 15px; width: 8%; border: none; border-radius: 4px; cursor: pointer; margin-left: 2%; margin-top: 2%" type="button" value="Print" onclick="prints()">
+
+
+
+
+  </body>
+</html>
